@@ -47,7 +47,7 @@ if (PluginFormcreatorForm::canCreate()) {
       'PluginFormcreatorForm'
    );
 
-   Search::show('PluginFormcreatorForm');
+   //Search::show('PluginFormcreatorForm');
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
    $out_test = fopen("/tmp/NICOLAAAAAAAAAAA.txt", "a");
@@ -151,6 +151,10 @@ if (PluginFormcreatorForm::canCreate()) {
    fwrite($out_test, "FORMID: $form_id\n");
    fclose($out_test);
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+   echo '<div style="color:red;text-align:center;font-size:150%">Modulo creato con ' . $NUMERO_SEZIONI_APPARECCHIATURA . ' sezioni apparecchiatura</div>';
+   
+   Session::addMessageAfterRedirect("Modulo Verbale fuori uso creato con $NUMERO_SEZIONI_APPARECCHIATURA sezioni apparecchiatura");
 
    Html::footer();
 } else {
